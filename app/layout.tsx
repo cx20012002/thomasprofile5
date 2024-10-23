@@ -2,15 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const switzer = localFont({
+  src: "./fonts/Switzer.woff",
+  weight: "500",
 });
 
 export const metadata: Metadata = {
@@ -25,10 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+      <body className={`${switzer.className} h-[3000px] antialiased`} suppressHydrationWarning={true}>
+        <div className="px-5 md:px-10">{children}</div>
       </body>
     </html>
   );
